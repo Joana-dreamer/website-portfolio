@@ -1,0 +1,394 @@
+/* GENERAL */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: lightgrey;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    color: rgb(48, 47, 47 );
+}
+
+
+    /* TRANSITION */
+
+    a,
+    .btn {
+       transition: all 300ms ease;
+    }
+
+/* DESKTOP NAV */
+
+nav, 
+.nav-links {
+    display: flex;
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+}
+
+.nav-links{
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a {
+    color: rgb(20, 20, 20);
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color: black;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: #237f9b;
+}
+
+.logo {
+    font-size: 2rem;
+}
+.logo:hover {
+    cursor: default;
+}
+
+/* HAMBURGER MENU */
+
+#hamburger-nav {
+    display: none;
+}
+
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links li {
+list-style: none;
+}
+
+.menu-links.open{
+    max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px);
+}
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+    transform: none;
+}
+.hamburger-icon span:first-child {
+    opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+    transform: none;
+}
+
+/* SECTION */
+
+section {
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.section-container {
+    display: flex;
+}
+/* HOME SECTION */
+
+#home {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    height: 80vh;
+}
+
+.section_pic_container {
+    display: flex;
+    height: 450px;
+    width: 400px;
+    margin: auto 0;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.section_pic_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+}
+
+.section_text {
+    align-self: center;
+    text-align: center;
+}
+    
+.section_text p {
+    font-weight: 600;
+}
+
+.section_text_p1 {
+    text-align: center;
+}
+
+.section_text_p2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#socials-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+/* ICONS */
+
+.icon {
+    cursor: pointer;
+    height: 2rem;
+}
+
+/* BUTTONS */
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    font-weight: 600;
+    transition: all 300ms ease; 
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+}
+.btn-color-1,
+.btn-color-2 {
+    border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.btn-color-1:hover,
+.btn-color-2:hover {
+    cursor: pointer;
+}
+
+.btn-color-1,
+.btn-color-2:hover {
+    background: rgb(53, 53, 53);
+    color: white;
+}
+
+.btn-color-1:hover {
+    background: #237f9b;
+    border: white;
+}
+.btn-color-2:hover {
+    background: #237f9b;
+    color: white;
+}
+
+.btn-color-2 {
+    background: none;
+}
+
+.btn-color-2:hover {
+    border: 0.1rem solid;
+}
+
+.btn-container {
+    gap: 1rem;
+}
+
+/* ABOUT SECTION */
+
+.section-container {
+    gap: 4rem;
+    height: 80%;
+
+}
+
+.section_pic_container2 {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: auto 0;
+    margin-top: 2rem;
+}
+
+
+.text-container {
+    text-align: justify;
+    margin-top: 7rem;
+}
+
+.details-containers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    padding: 5rem;
+
+    }
+.details-containers div {
+    background: white;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-right: 10px;
+    border-radius: 1rem;
+}
+   
+
+/* SERVICE SECTION */
+
+.services-list {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+grid-gap: 40px;
+margin-top: 2rem;
+}
+
+.services-list div{
+    background: white;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-right: 10px;
+    border-radius: 1rem;
+}
+.services-list div:hover {
+    background: #237f9b;
+    transition: background-color 0.3ss ease;
+    border-radius: 1rem; 
+    color: white;
+}
+
+.text-color:hover {
+color: white;
+
+}
+
+
+/* CONTACT */
+
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: white;
+    padding: 15px;
+    color: black;
+    margin: 15px 0;
+    font-size: 18px;
+    border-radius: 6px;
+
+
+}
+
+.submit-button {
+    cursor: pointer;
+    display: block;
+    background: #237f9b;
+    text-align: center;
+    padding: 10px;
+    border-color: white;
+    border-radius: 6px;
+    color: white;
+    margin: 0 auto;
+}
+
+.popup {
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: #237f9b;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    height: 26vh;
+    margin: 0 1rem;       
+}
+
+footer p {
+    text-align: center;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joana Datuin - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <script src="https://kit.fontawesome.com/237d0ba807.js" crossorigin="anonymous"></script>
+    </head>
+<body>
+        <nav id="desktop-nav">
+            <div class="logo">Joana D.</div>
+            <div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            </div>
+        </nav>
+        <nav id="hamburger-nav">
+            <div class="logo">Joana D.</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+        </nav>
+
+    <!-- Home Section -->
+
+    <section id="home"> 
+        <div class="section_pic_container">
+            <img src="./assets/profile.jpg" alt="Joana Datuin profile picture">
+        </div>
+        <div class="section_text"> 
+            <p class="section_text_p1"> Hi, I'm</p>
+        <h1 class="title">Joana Datuin</h1>
+        <p class="section_text_p2">Frontend Developer</p>
+        <div class="btn-container">
+            <button class="btn btn-color-2" onclick="window.open('./assets/joana-resume-2025.pdf')">
+                Download CV
+            </button>
+            <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                Contact Info
+            </button>
+        </div>
+        <div id="socials-container">
+            <img src="./assets/linkedin.png" alt="My LinkedIn profile"
+            class="icon" onclick="location.href='https://linkedin.com/in/joana-datuin-0a22b0309?utm_source=share&utm_campaign=share_via&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'"/>
+            <img src="./assets/github.png" alt="My Github profile"
+            class="icon" onclick="location.href='https://github.com/Joana-dreamer'" />
+        </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+
+    <section id="about">
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class="section_pic_container2">
+                <img src="./assets/about-pic.jpg" alt="Profile picture" class="about-pic"/>
+            </div> 
+                <div class="text-container">
+                    <p>A Frontend developer with a keen interest in coding, technology 
+                    and solving complex problems. Actively learning frontend and backend 
+                    technologies to build responsive website and web applications. Adaptable to 
+                    drastic changes and quick to learn as technology continuously evolves. 
+                    Seeking an opportunity where I can contribute my skills and gain experience 
+                    as well.</p>               
+                </div>
+            </div>
+        <div class="details-containers">
+            <div>
+            <img src="./assets/experience.png" alt="Experience icon" class="icon"/>
+            <h2>Work Experience</h2>
+            <p>2+ years <br /> Customer Service Representative <br /> Teleperformance, Mckinley West, Taguig City</p>
+            </div> 
+            <div>
+            <img src="./assets/education.png" alt="Education icon" class="icon"/>                     
+            <h2>Education</h2>
+            <p> Bachelor of Science in Information Technology <br /> Pangasinan State University, San Carlos Campus</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+
+    <section id="services">
+        <h1 class="title">My Services</h1>
+        <div class="services-list">
+            <div>
+               <i class="fa-solid fa-code"></i>
+               <h2>Web Development</h2>
+               <p class="text-color">Building and maintaining responsive websites and web applications.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop"></i>
+                <h2>UI/UX Design</h2>
+                <p class="text-color">Designing an interactive, clean, and modern websites with a great user experience.</p>
+             </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+
+    <section id="contact">
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-info">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="First Name" placeholder="First Name" required>
+                <input type="text" name="Last Name" placeholder="Last Name" required>
+                <input type="email" name="Email" placeholder="Email Address" required>
+                <textarea name="Message" rows="6" placeholder="Message" required></textarea>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div> 
+            <div id="popupMessage" class="popup">Message Submitted!</div>
+    </section>
+
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p>Copyright &copy; 2025 Joana Datuin. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyXfz0A68rFor0kSh-zP7rNx9HzaW8ZsUfpbSys0ookvP3v9lEFUDeqSoQcbT6ay2Y/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+    
+    <script>
+        document.getElementById("myForm").addEventListener("submit",
+        function(event) {
+            event.preventDefault();
+
+            let popup = document.getElementById("popupMessage");
+                popup.style.display = "block";
+
+                setTimeout(function() {
+                    popup.style.display ="none";
+                                     }, 3000);
+            });
+
+    </script>
+      
+</body>
+</html>
